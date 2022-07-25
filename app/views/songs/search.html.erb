@@ -1,10 +1,21 @@
-<h3>アーティスト名で検索</h3>
+<header class="songs-register-header">
+    <%= link_to image_tag('music-logo.png' , size: '185x50'), "/" %>
+  </header>
+  <div class='top-title'>
+  <h3>アーティスト名で検索</h3>
+  </div>
+  <form class="search" >
 <%= form_with url: search_songs_path, method: :get, local: true do |form| %>
+<div class='input-boxs'>
 <%= form.text_field :search %>
-<%= form.submit 'アーティスト名検索', name: nil %>
+</div>
+<div class='button'>
+<%= form.submit '検索', name: nil %>
+</div>
 <% end %>
+</form>
 
-
+<div class='search-result'>
 <h1>検索結果</h1>
 <div>
   <% if @searchartists.present? %>
