@@ -124,18 +124,19 @@
     </div>
     <ul class='item-lists'>
 
-      <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+      <% if @songs.present? %>
+     <% @songs.each do |song| %> 
       <li class='list'>
-        <%= link_to "#" do %>
+        <%= link_to song_path(song.id) do %>
         <div class='item-img-content'>
-          <%= image_tag "item-sample.png", class: "item-img" %>
+          <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= "タイトル" %>
+            <%= song.title %>
           </h3>
           <div class='item-price'>
-            <span><%= "アーティスト名" %><br><%= 'ジャンル' %></span>
+            <span><%= song.artist %><br><%= song.genre %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
@@ -144,10 +145,11 @@
         </div>
         <% end %>
       </li>
+     <% end %>
       <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
       <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-      <%# 商品がある場合は表示されないようにしましょう %>
+      <% else %>
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
@@ -165,15 +167,14 @@
         </div>
         <% end %>
       </li>
-      <%# //商品がある場合は表示されないようにしましょう %>
+    <% end %>
       <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
     </ul>
   </div>
   <%# /商品一覧 %>
 </div>
-<%#
-<%= link_to('#', class: 'purchase-btn') do %>
-  <%#<span class='purchase-btn-text'>出品する</span>
+<%= link_to(new_song_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-<%#<% end %>
+<% end %>
 <%= render "shared/footer" %>
