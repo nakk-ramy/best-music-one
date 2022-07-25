@@ -22,6 +22,12 @@ class SongsController < ApplicationController
     end
   end
 
+  def show
+    tracks = RSpotify::Track.search(@song.title).first(5)
+    @track = tracks.find { |track| track.artists[0].name == @song.artist }
+    @track = tracks.first if @track.nil?
+  end
+
   def search
     @songs = Song.all
     if params[:search].present?
