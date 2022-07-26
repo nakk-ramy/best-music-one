@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
   before_action :song_params_id, except: [:index, :new, :create, :search]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   require 'rspotify'
   RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
@@ -39,6 +40,10 @@ class SongsController < ApplicationController
     end
   end
 
+  def destroy
+    redirect_to root_path if @song.destroy
+  end
+
   def search
     @songs = Song.all
     if params[:search].present?
@@ -53,5 +58,9 @@ class SongsController < ApplicationController
 
   def song_params_id
     @song = Song.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to root_path if current_user != @song.user
   end
 end
