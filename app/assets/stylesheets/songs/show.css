@@ -79,6 +79,17 @@
   overflow-wrap: anywhere;
 }
 
+.text-all {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-light {
+  text-align: center;
+}
+
 .detail-table {
   margin-bottom: 30px;
   width: 100%;
