@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   before_action :song_params_id, except: [:index, :new, :create, :search]
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
 
   require 'rspotify'
   RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
@@ -26,6 +26,17 @@ class SongsController < ApplicationController
     tracks = RSpotify::Track.search(@song.title).first(5)
     @track = tracks.find { |track| track.artists[0].name == @song.artist }
     @track = tracks.first if @track.nil?
+  end
+
+  def edit
+  end
+
+  def update
+    if @song.update(song_params)
+      redirect_to song_path(@song)
+    else
+      render :edit
+    end
   end
 
   def search
