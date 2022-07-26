@@ -8,6 +8,7 @@
 
     <%= render 'shared/error_messages', model: f.object %>
 
+    <%# アーティスト画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         商品画像
@@ -17,10 +18,10 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"artist-image" %>
       </div>
     </div>
-    <%# /商品画像 %>
+    <%# /アーティスト画像 %>
     <%# 楽曲名 %>
     <div class="new-songs">
       <div class="weight-bold-text">
@@ -32,7 +33,7 @@
         アーティスト名
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :artist, class:"songs-text", id:"genre", placeholder:"アーティスト名" %>
+      <%= f.text_area :artist, class:"songs-text", id:"artist", placeholder:"アーティスト名" %>
       <div class="weight-bold-text">
         ジャンル
       </div>
