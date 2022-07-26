@@ -19,7 +19,7 @@
   <% if current_user.id == @song.user.id %>
     <%= link_to "楽曲の編集", edit_song_path(@song.id) , method: :get, class: "item-red-btn" %>
     <p class="or-text">or</p>
-    <%= link_to "削除", "#", method: :delete, class:"item-destroy" %>
+    <%= link_to "削除", song_path(@song.id), method: :delete, class:"item-destroy" %>
   <% else %>
     <%#<%= link_to "購入画面に進む", "#" ,class:"item-red-btn"%>
   <% end %>
