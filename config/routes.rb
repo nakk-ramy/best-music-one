@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :songs do
     collection {get "search"}
   end
+  resources :users, only: :show
 end
