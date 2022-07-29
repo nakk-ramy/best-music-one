@@ -138,10 +138,11 @@
            <% end %>
           <div class='item-price'>
             <span><%= song.artist %><br><%= song.genre %></span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
+            <% if user_signed_in? %>
+            <div id="favorites_buttons_<%= song.id %>">
+              <%= render partial: 'favorites/favorite', locals: { song: song } %>
             </div>
+            <% end %>
           </div>
           <div class='song-user'>
             <%= link_to User.find(song.user_id).nickname, user_path(song.user_id), class: "user-nickname" %>
