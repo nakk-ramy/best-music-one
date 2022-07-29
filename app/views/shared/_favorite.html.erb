@@ -1,7 +1,0 @@
-<% if Song.find_by(user_id: current_user.id, song_id: ) %>
-  <%= link_to "/", method: :delete %>
-    <i class="material-icons">star</i>
-<% else %>
-  <%= link_to "/", method: :post %>
-    <i class="material-icons">star_border</i>
-<% end %>
