@@ -1,30 +1,29 @@
 <%= render "shared/header" %>
 
-<%# 商品の概要 %>
-<div class="item-show">
-  <div class="item-box">
-    <div class="item-img-content">
-      <%= image_tag @song.image,class:"item-box-img" %>
+<%# 楽曲の概要 %>
+<div class="song-show">
+  <div class="song-box">
+    <div class="song-img-content">
+      <%= image_tag @song.image,class:"song-box-img" %>
     </div>
-    <div class="item-price-box">
-      <span class="item-price">
+    <div class="song-info-box">
+      <span class="song-title">
         <%= @song.title %>
       </span>
-      <span class="item-postage">
+      <span class="song-artist">
         <%= @song.artist%>
       </span>
     </div>
+  </div>
 
-<% if user_signed_in? %>
-  <% if current_user.id == @song.user.id %>
-    <%= link_to "楽曲の編集", edit_song_path(@song.id) , method: :get, class: "item-red-btn" %>
-    <p class="or-text">or</p>
-    <%= link_to "削除", song_path(@song.id), method: :delete, class:"item-destroy" %>
-  <% else %>
-    <%#<%= link_to "購入画面に進む", "#" ,class:"item-red-btn"%>
+  <% if user_signed_in? %>
+    <% if current_user.id == @song.user.id %>
+      <%= link_to "楽曲の編集", edit_song_path(@song.id) , method: :get, class: "song-red-btn" %>
+      <p class="or-text">or</p>
+      <%= link_to "削除", song_path(@song.id), method: :delete, class:"song-destroy" %>
+    <% end %>
   <% end %>
-<% end %>
-    <div class="item-explain-box">
+    <div class="song-explain-box">
       <span><%= "楽曲プレビュー" %></span>
     </div>
     <img src="<%= @track.album.images.first["url"] %>" width="300" height="300" class="block">
@@ -33,44 +32,7 @@
     <h3 class="text-light2"><%= @track.artists[0].genres %></h3>
     </div>
     <iframe class="iframe-song" src="<%= @track.preview_url %>">
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
-      </div>
-    </div>
-  </div>
-  <%# /商品の概要 %>
-
-  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
-      <p class="comment-warn">
-        相手のことを考え丁寧なコメントを心がけましょう。
-        <br>
-        不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
-  </div>
-  <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
-  </div>
-  <%# 詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
-  <a href="#" class="another-item"><%= "商品のカテゴリー名" %>をもっと見る</a>
-  <%# //詳細ページで表示されている商品のカテゴリー名を表示しましょう %>
 </div>
+  <%# /楽曲の概要 %>
 
-<%= render "shared/footer" %>
+<%= render "shared/second-footer" %>
