@@ -1,24 +1,29 @@
-# README
+# アプリケーション名
+Best Music One
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+好きな曲をシェアし、自分の知らない新たな曲に出会うことができます。
 
-Things you may want to cover:
+# URL
+https://best-music-one-38146.herokuapp.com/
 
-* Ruby version
+# テスト用アカウント
+・Basic認証ID：
+・Basic認証パスワード：
+・メールアドレス：
+・パスワード：
 
-* System dependencies
+# 利用方法
+## 楽曲投稿
+1. トップページ(一覧ページ)のヘッダーからユーザー新規登録を行う
+2. 新規楽曲投稿ボタンから、楽曲の内容(曲名・アーティスト名・ジャンル(任意)・画像)を入力し投稿する
 
-* Configuration
+## アーティストを調べる
+1. ヘッダーからアーティスト検索のページに移動する
+2. 検索窓にアーティスト名を入れて検索する
 
-* Database creation
+## 楽曲の詳細を見る
+1. 一覧ページから投稿されている楽曲の画像をクリックして、楽曲の詳細を確認する
+2. 楽曲のジャンル、曲のジャケットと曲のプレビューが表示される
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# アプリケーションを作成した背景
