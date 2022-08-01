@@ -7,7 +7,7 @@ class SongsController < ApplicationController
   RSpotify.authenticate(ENV['SPOTIFY_CLIENT_ID'], ENV['SPOTIFY_SECRET_ID'])
 
   def index
-    @songs = Song.order(created_at: :desc)
+    @songs = Song.all.page(params[:page]).per(4).order(created_at: :desc)
   end
 
   def new
