@@ -41,7 +41,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 10vh 0 0 0;
 }
 
 .song-contents>.title {
@@ -95,6 +95,10 @@ a {
   font-size: 1.5vh;
   display: flex;
   justify-content: space-between;
+}
+
+.nation {
+  padding-bottom: 30px;
 }
 
 /* //楽曲一覧 */
