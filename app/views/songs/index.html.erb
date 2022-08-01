@@ -53,11 +53,11 @@
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <div class='song-info'>
+          <h3 class='song-name'>
             好きな曲を入れてね！
           </h3>
-          <div class='item-price'>
+          <div class='song-etc'>
             <span>アーティスト名<br>ジャンル</span>
           </div>
         </div>
@@ -71,8 +71,8 @@
   </div>
   <%# /楽曲一覧 %>
 </div>
-<%= link_to(new_song_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>投稿する</span>
-  <%= image_tag 'icon_music.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<%= link_to(new_song_path, class: 'post-btn') do %>
+  <span class='post-btn-text'>投稿する</span>
+  <%= image_tag 'icon_music.png' , size: '185x50' ,class: "post-btn-icon" %>
 <% end %>
 <%= render "shared/footer" %>
