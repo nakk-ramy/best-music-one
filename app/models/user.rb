@@ -2,18 +2,17 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
+         :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2, :twitter]
 
   has_many :songs
   has_many :favorites
   has_many :sns_credentials
 
   validates :nickname, :password_confirmation, presence: true
-  validates :password, { format: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
-    user = User.where(email: auth.info.email).first_or_initialize(
+    user = User.where(nickname: auth.info.name).first_or_initialize(
       nickname: auth.info.name,
         email: auth.info.email
     )

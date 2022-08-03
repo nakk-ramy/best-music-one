@@ -9,6 +9,10 @@
         <i class="fa fa-google" aria-hidden="true"></i>
         <span>ログイン</span>
       <% end %>
+      <%= link_to  user_twitter_omniauth_authorize_path, method: :post do %>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+        <span>ログイン</span>
+      <% end %>
     </div>
     <div class='account-page__inner--right user-form'>
       <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f|%>
