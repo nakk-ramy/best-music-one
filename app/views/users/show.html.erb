@@ -6,23 +6,27 @@
       </span>
     </div>
     <ul class='song-lists'>
+    <% if @songs.length != 0 %>
       <% @songs.each do |song| %> 
       <li class='list'>
         <%= link_to song_path(song.id) do %>
-        <div class='item-img-content'>
-          <%= image_tag song.image, class: "item-img" %>
+        <div class='song-img-content'>
+          <%= image_tag song.image, class: "song-img" %>
         </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <div class='song-info'>
+          <h3 class='song-title'>
             <%= song.title %>
           </h3>
            <% end %>
-          <div class='item-price'>
+          <div class='song-etc'>
             <span><%= song.artist %><br><%= song.genre %></span>
           </div>
         </div>
       </li>
      <% end %>
+     <% else %>
+      まだ登録されていません
+    <% end %>
     </ul>
 
     <div class="my_page">
@@ -35,23 +39,21 @@
       <% @favorites.each do |song| %>
         <li class='list'>
           <%= link_to song_path(song.id) do %>
-          <div class='item-img-content'>
-            <%= image_tag song.image, class: "item-img"%>
+          <div class='song-img-content'>
+            <%= image_tag song.image, class: "song-img"%>
           </div>
-          <div class='item-info'>
-            <h3 class='item-name'>
+          <div class='song-info'>
+            <h3 class='song-titlr'>
               <%= song.title %>
             </h3>
             <% end %>
-            <div class='item-price'>
+            <div class='song-etc'>
               <span><%= song.artist %><br><%= song.genre %></span>
             </div>
             <% if user_signed_in? %>
-              <% unless current_user.id == song.user.id %>
             <div id="favorites_buttons_<%= song.id %>">
               <%= render partial: 'favorites/favorite', locals: { song: song } %>
             </div>
-            <% end %>
             <% end %>
           </div>
         </li>
