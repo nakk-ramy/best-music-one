@@ -10,9 +10,16 @@
       <span class="song-title">
         <%= @song.title %>
       </span>
+      <%= link_to artist_song_path(@song.artist) do %>
       <span class="song-artist">
         <%= @song.artist%>
       </span>
+      <% end %>
+      <%= link_to  user_path(@song.user_id), class: "user-nickname" do %>
+      <span class='song-user'>
+        投稿者:<%= User.find(@song.user_id).nickname %>
+      </span>
+      <% end %>
     </div>
   </div>
 

@@ -35,8 +35,10 @@
             <%= song.title %>
           </h3>
            <% end %>
+           <%= link_to artist_song_path(song.artist) do %>
           <div class='song-etc'>
             <span><%= song.artist %><br><%= song.genre %></span>
+            <% end %>
             <% if user_signed_in? %>
             <div id="favorites_buttons_<%= song.id %>">
               <%= render partial: 'favorites/favorite', locals: { song: song } %>
@@ -52,7 +54,7 @@
       <% else %>
       <li class='list'>
         <%= link_to '#' do %>
-        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+        <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "song-img" %>
         <div class='song-info'>
           <h3 class='song-name'>
             好きな曲を入れてね！

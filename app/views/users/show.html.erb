@@ -50,6 +50,9 @@
             <div class='song-etc'>
               <span><%= song.artist %><br><%= song.genre %></span>
             </div>
+            <div class='song-user'>
+            <span>投稿者:</span><%= link_to User.find(song.user_id).nickname, user_path(song.user_id), class: "user-nickname" %>
+            </div>
             <% if user_signed_in? %>
             <div id="favorites_buttons_<%= song.id %>">
               <%= render partial: 'favorites/favorite', locals: { song: song } %>
