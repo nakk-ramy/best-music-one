@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-  before_action :song_params_id, except: [:index, :new, :create, :search]
+  before_action :song_params_id, except: [:index, :new, :create, :search, :artist]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
@@ -50,6 +50,11 @@ class SongsController < ApplicationController
     @searchartists = RSpotify::Artist.search(params[:search])
     end
   end 
+
+  def artist
+    @song = Song.find_by(artist: params[:id])
+    @artist = RSpotify::Artist.search(@song.artist)
+  end
 
   private
   def song_params

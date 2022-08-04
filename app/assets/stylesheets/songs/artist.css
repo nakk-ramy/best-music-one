@@ -1,0 +1,26 @@
+.artist-content {
+  width: 100vw;
+}
+
+.text-all {
+  margin-top: 100px;
+  padding: 5vh 15vw;
+}
+
+.artist-name {
+  font-size: 60px;
+}
+
+.artist-songs {
+  display: flex;
+  justify-content: center;
+}
+
+.artist-title {
+  font-size: 15px;
+}
+
+.artist-title>h3 {
+  color: orange;
+  font-size: 30px;
+}

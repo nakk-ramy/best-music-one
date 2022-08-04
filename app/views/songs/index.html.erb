@@ -35,8 +35,10 @@
             <%= song.title %>
           </h3>
            <% end %>
+           <%= link_to artist_song_path(song.artist) do %>
           <div class='song-etc'>
             <span><%= song.artist %><br><%= song.genre %></span>
+            <% end %>
             <% if user_signed_in? %>
             <div id="favorites_buttons_<%= song.id %>">
               <%= render partial: 'favorites/favorite', locals: { song: song } %>
