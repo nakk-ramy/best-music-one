@@ -41,19 +41,17 @@ SNS認証での新規アカウント作成 ※ニックネーム名は変更し�
 [![Image from Gyazo](https://i.gyazo.com/9d4685ea28faa767b107b539e8457f84.gif)](https://gyazo.com/9d4685ea28faa767b107b539e8457f84)
 
 投稿ページに必要事項、画像を入力後投稿
-[![Image from Gyazo](https://i.gyazo.com/4dab6ed7e9729f52e4a4e9143c88bc36.gif)](https://gyazo.com/4dab6ed7e9729f52e4a4e9143c88bc36)
+[![Image from Gyazo](https://i.gyazo.com/017c64eefade924aef05145e4065942d.gif)](https://gyazo.com/017c64eefade924aef05145e4065942d)
 
 楽曲の詳細ページ、ページ内に楽曲のプレビュー再生機能
-[![Image from Gyazo](https://i.gyazo.com/6c42de5af36ef030bfb273d35f0fd572.gif)](https://gyazo.com/6c42de5af36ef030bfb273d35f0fd572)
 
 アーティスト検索ページでの検索機能
-[![Image from Gyazo](https://i.gyazo.com/f471937cc907556b824034ffa2c99103.gif)](https://gyazo.com/f471937cc907556b824034ffa2c99103)
 
 お気に入り機能を非同期通信での実装
-[![Image from Gyazo](https://i.gyazo.com/2c7e38fcc5dbeb68fd6b901a3abe06e2.gif)](https://gyazo.com/2c7e38fcc5dbeb68fd6b901a3abe06e2)
+[![Image from Gyazo](https://i.gyazo.com/14aa510e6b6d0d7781c64da2426d1cb9.gif)](https://gyazo.com/14aa510e6b6d0d7781c64da2426d1cb9)
 
 マイページの実装
-[![Image from Gyazo](https://i.gyazo.com/a9c90b7597309447dbf0a63f6f2f80d4.gif)](https://gyazo.com/a9c90b7597309447dbf0a63f6f2f80d4)
+[![Image from Gyazo](https://i.gyazo.com/0aa3fdd8694e47e021ab4adb9680bd21.gif)](https://gyazo.com/0aa3fdd8694e47e021ab4adb9680bd21)
 
 # 実装予定の機能
 今後、楽曲ごとにタグ付を行い、検索機能を実装。
